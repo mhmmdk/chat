@@ -106,11 +106,17 @@ function scrollToBottom() {
   messagesEl.scrollTop = messagesEl.scrollHeight;
 }
 
-function x() {
-  document.querySelector(".sidebar").classList.add("show");
-}
-function expand() {
-  document.querySelector(".sidebar").classList.toggle("show");
+function toggleSidebar() {
+  const sidebar = document.querySelector(".sidebar");
+  const menuIcon = document.getElementById("menuIcon");
+  const closeIcon = document.getElementById("closeIcon");
+
+  // Toggle sidebar visibility
+  const isOpen = sidebar.classList.toggle("show");
+
+  // Update menu button icons
+  menuIcon.style.display = isOpen ? "none" : "block";
+  closeIcon.style.display = isOpen ? "block" : "none";
 }
 
 let dark = false;
